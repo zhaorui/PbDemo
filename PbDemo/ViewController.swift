@@ -8,8 +8,13 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+let kPublicUrl = "public.url"
+let kPublicUrlName = "public.url-name"
 
+class ViewController: NSViewController {
+    
+  @IBOutlet var textView: NSTextView!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +27,26 @@ class ViewController: NSViewController {
         }
     }
 
+    @IBAction func copyToClipboard(_ sender: NSButton) {
+        guard let content = textView.string else { return }
+        let pb = NSPasteboard.general()
+        pb.clearContents()
+        pb.writeObjects([content as NSString])
+    }
 
+    @IBAction func showClipboardContent(_ sender: NSButton) {
+        let pb = NSPasteboard.general()
+        
+        for item in pb.pasteboardItems ?? [] {
+            if let str = item.string(forType: kPublicUrl) {
+                textView.string = "url: \(str)"
+            } else if let str = item.string(forType: kPublicUrlName) {
+                textView.string = "url name: \(str)"
+            } else {
+                let str = item.string(forType: NSPasteboardTypeString)
+                textView.string = str
+            }
+        }
+    }
 }
 
