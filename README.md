@@ -36,3 +36,7 @@ NSPasteboardItem使用UTI来获取剪贴板内容，**NSPasteboardTypeString**�
 * https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/UniformTypeIdentifier.html
 * https://developer.apple.com/library/content/documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html#//apple_ref/doc/uid/TP40009259-SW1
 * https://developer.apple.com/reference/mobilecoreservices/uttype#//apple_ref/doc/uid/TP40008771
+
+##支持我！
+我是蓝灯代理商，蓝灯是一款简单易用的翻墙工具，https://github.com/getlantern/lantern
+欢迎试用，需要升级专业版的同学可以微信我喔, 13809627140
